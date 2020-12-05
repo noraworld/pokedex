@@ -31,7 +31,7 @@ In Ruby, you should add `require 'pokedex'`.
 require 'pokedex'
 ```
 
-Also in Ruby, method chaining is available.
+And in Ruby, method chaining is available.
 
 ```ruby
 Pokedex::Filter.new.type('ice').region('sinnoh').random(3).only('name').take
@@ -64,7 +64,7 @@ Pokedex::Filter.new.id(25, 133).take
 It is also available to specify pokemons by a range.
 
 ```bash
-$ pokedex {100..200}
+$ pokedex {100..199}
 ```
 
 ```ruby
@@ -72,7 +72,7 @@ Pokedex::Filter.new.id(100..199).take
 ```
 
 ### Name
-Retrieves pokemons specified by its name.
+Retrieves pokemons specified by its names.
 
 ```bash
 $ pokedex eevee,clefairy
@@ -151,7 +151,7 @@ Pokedex::Fileter.new.type(['grass', 'poison'], ['fire', 'flying']).take
 ```
 
 ### Region
-Retrieves pokemons living in a specific region.
+Retrieves pokemons living in specific regions.
 
 ```bash
 $ pokedex --region=hoenn,unova
@@ -181,7 +181,7 @@ Pokedex::Filter.new.random(3).take
 In Ruby, this is also available.
 
 ```ruby
-Pokedex::Filter.new.ichooseyou!(3).take
+Pokedex::Filter.new.ichooseyou!(3)
 ```
 
 The differences between `Pokedex::Filter#random` and `Pokedex::Filter#ichooseyou!` are whether it’s a destructive method or not, and whether it needs `Pokedex::Filter#take` or not.
