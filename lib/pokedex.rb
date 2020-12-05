@@ -17,6 +17,14 @@ module Pokedex
       end
     end
 
+    def region
+      File.join(root, 'data/regions.json').then do |name|
+        File.open(name).then do |file|
+          JSON.parse(file.read)
+        end
+      end
+    end
+
     private
 
     def root
