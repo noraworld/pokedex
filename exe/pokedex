@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'pokedex'
+
+Pokedex::CLI.start
