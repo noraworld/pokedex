@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": {
+      "english": "Kanto",
+      "japanese": "カントー"
+    },
+    "range": {
+      "from": 1,
+      "to": 151
+    }
+  },
+  {
+    "id": 2,
+    "name": {
+      "english": "Johto",
+      "japanese": "ジョウト"
+    },
+    "range": {
+      "from": 152,
+      "to": 251
+    }
+  },
+  {
+    "id": 3,
+    "name": {
+      "english": "Hoenn",
+      "japanese": "ホウエン"
+    },
+    "range": {
+      "from": 252,
+      "to": 386
+    }
+  },
+  {
+    "id": 4,
+    "name": {
+      "english": "Sinnoh",
+      "japanese": "シンオウ"
+    },
+    "range": {
+      "from": 387,
+      "to": 493
+    }
+  },
+  {
+    "id": 5,
+    "name": {
+      "english": "Unova",
+      "japanese": "イッシュ"
+    },
+    "range": {
+      "from": 494,
+      "to": 649
+    }
+  },
+  {
+    "id": 6,
+    "name": {
+      "english": "Kalos",
+      "japanese": "カロス"
+    },
+    "range": {
+      "from": 650,
+      "to": 719
+    }
+  }
+]

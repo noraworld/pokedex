@@ -1,92 +1,146 @@
 [
   {
-    "english": "Normal",
-    "chinese": "一般",
-    "japanese": "ノーマル"
+    "id": 1,
+    "name": {
+      "english": "Normal",
+      "chinese": "一般",
+      "japanese": "ノーマル"
+    }
   },
   {
-    "english": "Fighting",
-    "chinese": "格斗",
-    "japanese": "かくとう"
+    "id": 2,
+    "name": {
+      "english": "Fighting",
+      "chinese": "格斗",
+      "japanese": "かくとう"
+    }
   },
   {
-    "english": "Flying",
-    "chinese": "飞行",
-    "japanese": "ひこう"
+    "id": 3,
+    "name": {
+      "english": "Flying",
+      "chinese": "飞行",
+      "japanese": "ひこう"
+    }
   },
   {
-    "english": "Poison",
-    "chinese": "毒",
-    "japanese": "どく"
+    "id": 4,
+    "name": {
+      "english": "Poison",
+      "chinese": "毒",
+      "japanese": "どく"
+    }
   },
   {
-    "english": "Ground",
-    "chinese": "地上",
-    "japanese": "じめん"
+    "id": 5,
+    "name": {
+      "english": "Ground",
+      "chinese": "地上",
+      "japanese": "じめん"
+    }
   },
   {
-    "english": "Rock",
-    "chinese": "岩石",
-    "japanese": "いわ"
+    "id": 6,
+    "name": {
+      "english": "Rock",
+      "chinese": "岩石",
+      "japanese": "いわ"
+    }
   },
   {
-    "english": "Bug",
-    "chinese": "虫",
-    "japanese": "むし"
+    "id": 7,
+    "name": {
+      "english": "Bug",
+      "chinese": "虫",
+      "japanese": "むし"
+    }
   },
   {
-    "english": "Ghost",
-    "chinese": "幽灵",
-    "japanese": "ゴースト"
+    "id": 8,
+    "name": {
+      "english": "Ghost",
+      "chinese": "幽灵",
+      "japanese": "ゴースト"
+    }
   },
   {
-    "english": "Steel",
-    "chinese": "钢",
-    "japanese": "はがね"
+    "id": 9,
+    "name": {
+      "english": "Steel",
+      "chinese": "钢",
+      "japanese": "はがね"
+    }
   },
   {
-    "english": "Fire",
-    "chinese": "炎",
-    "japanese": "ほのお"
+    "id": 10,
+    "name": {
+      "english": "Fire",
+      "chinese": "炎",
+      "japanese": "ほのお"
+    }
   },
   {
-    "english": "Water",
-    "chinese": "水",
-    "japanese": "みず"
+    "id": 11,
+    "name": {
+      "english": "Water",
+      "chinese": "水",
+      "japanese": "みず"
+    }
   },
   {
-    "english": "Grass",
-    "chinese": "草",
-    "japanese": "くさ"
+    "id": 12,
+    "name": {
+      "english": "Grass",
+      "chinese": "草",
+      "japanese": "くさ"
+    }
   },
   {
-    "english": "Electric",
-    "chinese": "电",
-    "japanese": "でんき"
+    "id": 13,
+    "name": {
+      "english": "Electric",
+      "chinese": "电",
+      "japanese": "でんき"
+    }
   },
   {
-    "english": "Psychic",
-    "chinese": "超能",
-    "japanese": "エスパー"
+    "id": 14,
+    "name": {
+      "english": "Psychic",
+      "chinese": "超能",
+      "japanese": "エスパー"
+    }
   },
   {
-    "english": "Ice",
-    "chinese": "冰",
-    "japanese": "こおり"
+    "id": 15,
+    "name": {
+      "english": "Ice",
+      "chinese": "冰",
+      "japanese": "こおり"
+    }
   },
   {
-    "english": "Dragon",
-    "chinese": "龙",
-    "japanese": "ドラゴン"
+    "id": 16,
+    "name": {
+      "english": "Dragon",
+      "chinese": "龙",
+      "japanese": "ドラゴン"
+    }
   },
   {
-    "english": "Dark",
-    "chinese": "恶",
-    "japanese": "あく"
+    "id": 17,
+    "name": {
+      "english": "Dark",
+      "chinese": "恶",
+      "japanese": "あく"
+    }
   },
   {
-    "english": "Fairy",
-    "chinese": "妖精",
-    "japanese": "フェアリー"
+    "id": 18,
+    "name": {
+      "english": "Fairy",
+      "chinese": "妖精",
+      "japanese": "フェアリー"
+    }
   }
 ]
