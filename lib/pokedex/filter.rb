@@ -2,10 +2,11 @@
 
 module Pokedex
   class Filter
-    attr_accessor :pokemons
+    attr_accessor :pokemons, :select
 
     def initialize
       @pokemons = Pokedex.all
+      @select = nil
     end
 
     def id(*params)
@@ -74,7 +75,26 @@ module Pokedex
     end
 
     def take
+      unless @select.nil?
+        selected = []
+
+        @select.each do |s|
+          if selected.empty?
+            selected += @pokemons.map { |pokemon| pokemon.slice(s) }
+          else
+            @pokemons.each_with_index { |pokemon, index| selected[index].merge!(pokemon.slice(s)) }
+          end
+        end
+
+        @pokemons = selected
+      end
+
       @pokemons
+    end
+
+    def only(*params)
+      @select = params
+      self
     end
 
     def reset
