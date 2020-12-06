@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pokemon (0.1.1)
+    pokemon (0.1.2)
       thor
 
 GEM
