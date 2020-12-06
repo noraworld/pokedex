@@ -46,6 +46,25 @@ module Pokedex
       self
     end
 
+    def fuzzy(*params, lang: nil)
+      results = []
+
+      params.each do |fuzzy_name|
+        results += @pokemons.select do |pokemon|
+          if lang
+            pokemon['name'][lang].downcase.include?(fuzzy_name.downcase)
+          else
+            pokemon['name'].keys.find do |key|
+              pokemon['name'][key].downcase.include?(fuzzy_name.downcase)
+            end
+          end
+        end
+      end
+
+      @pokemons = results
+      self
+    end
+
     # 'water'
     # ['grass', 'poison']
     # 'grass', 'poison'

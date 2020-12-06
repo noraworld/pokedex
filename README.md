@@ -95,6 +95,33 @@ Supported languages (currently):
 - Chinese
 - French
 
+You can also specify a language.
+
+```ruby
+Pokedex::Filter.new.name('growlithe', lang: 'english').take # => [{"id"=>58, "name"=>{"english"=>"Growlithe", "japanese"=>"ガーディ", "chinese"=>"卡蒂狗", "french"=>"Caninos"}, "type"=>["Fire"], "base"=>{"HP"=>55, "Attack"=>70, "Defense"=>45, "Sp. Attack"=>70, "Sp. Defense"=>50, "Speed"=>60}}]
+
+# French name is not detected because the language is set as English
+Pokedex::Filter.new.name('caninos', lang: 'english').take # => []
+```
+
+### Fuzzy
+Retrieves pokemons specified by a part of its name. This is useful when the pokemon whose name you want to know is ambiguous.
+
+```bash
+$ pokedex --fuzzy=fla
+```
+
+```ruby
+Pokedex::Filter.new.fuzzy('fla').take
+```
+
+You can also specify a language.
+
+```ruby
+# French name is excluded
+Pokedex::Filter.new.fuzzy('fla', lang: 'english').take
+```
+
 ### Type
 Retrieves pokemons categorized as specific types.
 
@@ -211,17 +238,6 @@ Pokedex::Filter.new.region('johto').ichooseyou!
 # These are same (tricky)
 Pokedex::Filter.new.region('johto').ichooseyou!
 Pokedex::Filter.new.ichooseyou!
-```
-
-### Fuzzy
-Retrieves pokemons specified by a part of its name. This is useful when the pokemon whose name you want to know is ambiguous.
-
-```bash
-$ pokedex --fuzzy=dod
-```
-
-```ruby
-Pokedex::Filter.new.fuzzy('dod').take
 ```
 
 ### Only
