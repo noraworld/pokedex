@@ -75,7 +75,7 @@ Pokedex::Filter.new.id(100..199).take
 Retrieves pokemons specified by its names.
 
 ```bash
-$ pokedex eevee,clefairy
+$ pokedex growlithe,clefairy,vulpix,eevee
 ```
 
 ```ruby
@@ -244,6 +244,22 @@ $ pokedex --type=fairy --region=kalos --except=type,base
 
 ```ruby
 Pokedex::Filter.new.type('fairy').region('kalos').except('type', 'base').take
+```
+
+### Reset
+Deletes all filters. This is only available in Ruby.
+
+```ruby
+# Create a new instance
+pokemons = Pokedex::Filter.new
+
+# Gyarados is not a Dragon type
+pokemons.type('dragon').name('gyarados').take # => []
+
+# Reset all filters
+pokemons.reset
+
+pokemons.type('water').name('gyarados').take # => [{"id"=>130, "name"=>{"english"=>"Gyarados", "japanese"=>"ギャラドス", "chinese"=>"暴鲤龙", "french"=>"Léviator"}, "type"=>["Water", "Flying"], "base"=>{"HP"=>95, "Attack"=>125, "Defense"=>79, "Sp. Attack"=>60, "Sp. Defense"=>100, "Speed"=>81}}]
 ```
 
 ## Development
