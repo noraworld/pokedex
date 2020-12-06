@@ -79,14 +79,21 @@ $ pokedex eevee,clefairy
 ```
 
 ```ruby
-Pokedex::Filter.new.name('eevee', 'clefairy').take
+Pokedex::Filter.new.name('growlithe', 'clefairy', 'vulpix', 'eevee').take
 ```
 
-Also supports other languages.
+Also supports other languages. Languages are auto detected.
 
 ```ruby
-Pokedex::Filter.new.name('イーブイ', 'ピッピ', lang: 'japanese').take
+Pokedex::Filter.new.name('growlithe', 'ピッピ', '六尾', 'évoli').take
 ```
+
+Supported languages (currently):
+
+- English
+- Japanese
+- Chinese
+- French
 
 ### Type
 Retrieves pokemons categorized as specific types.

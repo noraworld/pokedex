@@ -28,11 +28,18 @@ module Pokedex
       self
     end
 
-    def name(*params, lang: 'english')
+    # FIX: cannot find Porygon-Z
+    # 'porygon-z'.capitalize => 'Porygon-z'
+    # but it must take as 'Porygon-Z'
+    def name(*params)
       results = []
 
       params.each do |name|
-        results += @pokemons.select { |pokemon| pokemon['name'][lang] == name.capitalize }
+        results += @pokemons.select do |pokemon|
+          pokemon['name'].keys.find do |key|
+            pokemon['name'][key] == name.capitalize
+          end
+        end
       end
 
       @pokemons = results
@@ -45,6 +52,10 @@ module Pokedex
     # ['grass'], ['poison']
     # ['grass'], 'poison'
     # ['grass', 'poison'], ['fire', 'flying']
+    #
+    # FIX: cannot find pokemons when order is opposite
+    # it can find: ['fire', 'flying']
+    # but it cannot find: ['flying', 'fire']
     def type(*params)
       @pokemons = params.map do |type|
         case type
