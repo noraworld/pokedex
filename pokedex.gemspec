@@ -3,7 +3,7 @@
 require_relative 'lib/pokedex/version'
 
 Gem::Specification.new do |spec|
-  spec.name    = 'pokedex'
+  spec.name    = 'pokemon'
   spec.version = Pokedex::VERSION
   spec.authors = ['noraworld']
   spec.email   = ['mail@noraworld.com']
