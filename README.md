@@ -221,7 +221,7 @@ Pokedex::Filter.new.ichooseyou!(3)
 The difference between `Pokedex::Filter#random` and `Pokedex::Filter#ichooseyou!` is whether it needs `Pokedex::Filter#take` or not.
 
 ```ruby
-# These are the same
+# These are the same (of course the results are different because these take pokemons at random)
 Pokedex::Filter.new.region('johto').random.take
 Pokedex::Filter.new.region('johto').ichooseyou!
 ```
