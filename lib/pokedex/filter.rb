@@ -2,11 +2,12 @@
 
 module Pokedex
   class Filter
-    attr_accessor :pokemons, :select
+    attr_accessor :pokemons, :include_keys, :exclude_keys
 
     def initialize
       @pokemons = Pokedex.all
-      @select = nil
+      @include_keys = nil
+      @exclude_keys = nil
     end
 
     def id(*params)
@@ -75,25 +76,27 @@ module Pokedex
     end
 
     def take
-      unless @select.nil?
-        selected = []
+      raise "Both `only' and `except' are called. Choose either one." if @include_keys && @exclude_keys
 
-        @select.each do |s|
-          if selected.empty?
-            selected += @pokemons.map { |pokemon| pokemon.slice(s) }
-          else
-            @pokemons.each_with_index { |pokemon, index| selected[index].merge!(pokemon.slice(s)) }
-          end
+      if @include_keys
+        @pokemons.each do |pokemon|
+          exclude_keys = pokemon.keys - @include_keys
+          exclude_keys.each { |key| pokemon.delete(key) }
         end
-
-        @pokemons = selected
+      elsif @exclude_keys
+        @exclude_keys.each { |key| @pokemons.each { |pokemon| pokemon.delete(key) } }
       end
 
       @pokemons
     end
 
     def only(*params)
-      @select = params
+      @include_keys = params
+      self
+    end
+
+    def except(*params)
+      @exclude_keys = params
       self
     end
 
