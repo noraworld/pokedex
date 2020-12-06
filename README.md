@@ -218,26 +218,12 @@ In Ruby, this is also available.
 Pokedex::Filter.new.ichooseyou!(3)
 ```
 
-The differences between `Pokedex::Filter#random` and `Pokedex::Filter#ichooseyou!` are whether it’s a destructive method or not, and whether it needs `Pokedex::Filter#take` or not.
+The difference between `Pokedex::Filter#random` and `Pokedex::Filter#ichooseyou!` is whether it needs `Pokedex::Filter#take` or not.
 
 ```ruby
-# These are same
-Pokedex::Filter.new.random.take
-Pokedex::Filter.new.ichooseyou!
-```
-
-```ruby
-# These are NOT same
+# These are the same
 Pokedex::Filter.new.region('johto').random.take
 Pokedex::Filter.new.region('johto').ichooseyou!
-```
-
-`Pokedex::Filter#ichooseyou!` targets at all pokemons even if an instance is already filtered.
-
-```ruby
-# These are same (tricky)
-Pokedex::Filter.new.region('johto').ichooseyou!
-Pokedex::Filter.new.ichooseyou!
 ```
 
 ### Only

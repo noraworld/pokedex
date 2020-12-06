@@ -106,6 +106,15 @@ module Pokedex
       self
     end
 
+    def random(num = 1)
+      @pokemons = @pokemons.sample(num)
+      self
+    end
+
+    def ichooseyou!(num = 1)
+      random(num).take
+    end
+
     def take
       raise "Both `only' and `except' are called. Choose either one." if @include_keys && @exclude_keys
 
