@@ -25,7 +25,7 @@ $ gem install pokedex
 ## Usage
 Pokedex supports both CLI and Ruby interface. You can choose whichever you want.
 
-In Ruby, you should add `require 'pokedex'`.
+In Ruby, you should add this line.
 
 ```ruby
 require 'pokedex'
@@ -253,7 +253,7 @@ Supported languages (currently):
 You can also specify a language.
 
 ```ruby
-# Japanese name is excluded
+# Japanese names are excluded
 Pokedex::Filter.new.region('ホウエン', 'イッシュ', lang: 'english').take # => []
 ```
 
@@ -328,12 +328,15 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
+### Dataset
+The pokemon dataset is located under the [data](./data) directory and written in JSON. You can add new pokemons, types, regions, and languages by pull request. Thank you for your cooperation!
+
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at https://github.com/noraworld/pokedex. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/noraworld/pokedex/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at [noraworld/pokedex](https://github.com/noraworld/pokedex). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](./CODE_OF_CONDUCT.md).
 
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Code of Conduct
-Everyone interacting in the Pokedex project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/noraworld/pokedex/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Pokedex project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](./CODE_OF_CONDUCT.md).
