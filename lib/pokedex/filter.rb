@@ -115,8 +115,8 @@ module Pokedex
       self
     end
 
-    def ichooseyou!(num = 1)
-      random(num).take
+    def ichooseyou!
+      random(1).take
     end
 
     def take

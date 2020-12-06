@@ -234,15 +234,18 @@ Pokedex::Filter.new.random(3).take
 In Ruby, this is also available.
 
 ```ruby
-Pokedex::Filter.new.ichooseyou!(3)
+Pokedex::Filter.new.ichooseyou!
 ```
 
-The difference between `Pokedex::Filter#random` and `Pokedex::Filter#ichooseyou!` is whether it needs `Pokedex::Filter#take` or not.
+The differences between `Pokedex::Filter#random` and `Pokedex::Filter#ichooseyou!` are whether it needs `Pokedex::Filter#take` or not, and whether it can take multiple pokemons.
 
 ```ruby
 # These are the same (of course the results are different because these take pokemons at random)
 Pokedex::Filter.new.region('johto').random.take
 Pokedex::Filter.new.region('johto').ichooseyou!
+
+# Pokedex::Filter#ichooseyou! can only take a single pokemon
+Pokedex::Filter.new.region('johto').ichooseyou!(3) # => ArgumentError
 ```
 
 ### Only
