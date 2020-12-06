@@ -115,6 +115,13 @@ $ pokedex --fuzzy=fla
 Pokedex::Filter.new.fuzzy('fla').take
 ```
 
+Supported languages (currently):
+
+- English
+- Japanese
+- Chinese
+- French
+
 You can also specify a language.
 
 ```ruby
@@ -198,7 +205,19 @@ Pokedex::Filter.new.region('hoenn', 'unova').take
 Also supports other languages.
 
 ```ruby
-Pokedex::Filter.new.region('ホウエン', 'イッシュ', lang: 'japanese').take
+Pokedex::Filter.new.region('hoenn', 'イッシュ').take
+```
+
+Supported languages (currently):
+
+- English
+- Japanese
+
+You can also specify a language.
+
+```ruby
+# Japanese name is excluded
+Pokedex::Filter.new.region('ホウエン', 'イッシュ', lang: 'english').take # => []
 ```
 
 ### Random

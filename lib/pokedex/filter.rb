@@ -80,9 +80,9 @@ module Pokedex
       @pokemons = params.map do |type|
         case type
         when String
-          @pokemons.select { |pokemon| pokemon['type'].include?(type.capitalize) }
+          @pokemons.select { |pokemon| pokemon['type'].map(&:downcase).include?(type.downcase) }
         when Array
-          @pokemons.select { |pokemon| pokemon['type'] == type.map(&:capitalize) }
+          @pokemons.select { |pokemon| pokemon['type'].map(&:downcase) == type.map(&:downcase) }
         else
           raise
         end
@@ -91,11 +91,15 @@ module Pokedex
       self
     end
 
-    def region(*params, lang: 'english')
+    def region(*params, lang: nil)
       region_range = []
 
       params.each do |reg|
-        region_range += Pokedex.region.select { |region| region['name'][lang] == reg.capitalize }.map { |r| r['range'] }
+        if lang
+          region_range += Pokedex.region.select { |region| region['name'][lang].casecmp(reg).zero? }.map { |r| r['range'] }
+        else
+          region_range += Pokedex.region.select { |region| region['name'].keys.find { |key| region['name'][key].casecmp(reg).zero? } }.map { |r| r['range'] }
+        end
       end
 
       region_range.map! do |range|
