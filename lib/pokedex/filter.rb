@@ -28,16 +28,17 @@ module Pokedex
       self
     end
 
-    # FIX: cannot find Porygon-Z
-    # 'porygon-z'.capitalize => 'Porygon-z'
-    # but it must take as 'Porygon-Z'
-    def name(*params)
+    def name(*params, lang: nil)
       results = []
 
       params.each do |name|
         results += @pokemons.select do |pokemon|
-          pokemon['name'].keys.find do |key|
-            pokemon['name'][key] == name.capitalize
+          if lang
+            pokemon['name'][lang].casecmp(name).zero?
+          else
+            pokemon['name'].keys.find do |key|
+              pokemon['name'][key].casecmp(name).zero?
+            end
           end
         end
       end
