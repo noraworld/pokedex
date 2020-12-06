@@ -28,7 +28,7 @@ module Pokedex
     private
 
     def root
-      Gem::Specification.find_by_name('pokedex').gem_dir
+      Gem::Specification.find_by_name('pokemon').gem_dir
     end
   end
 end
