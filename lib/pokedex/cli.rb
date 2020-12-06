@@ -9,7 +9,7 @@ module Pokedex
 
     desc '', 'yet'
     def all
-      puts 'It works!'
+      puts 'CLI is WIP!'
     end
   end
 end
