@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description           = 'Search pokemons you want to know by a CLI and a Ruby interface'
   spec.homepage              = 'https://github.com/noraworld/pokedex'
   spec.license               = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.7.1')
 
   spec.metadata['homepage_uri']    = spec.homepage
   spec.metadata['source_code_uri'] = 'https://github.com/noraworld/pokedex'
