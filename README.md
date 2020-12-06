@@ -105,7 +105,7 @@ Pokedex::Filter.new.name('caninos', lang: 'english').take # => []
 ```
 
 ### Fuzzy
-Retrieves pokemons specified by a part of its name. This is useful when the pokemon whose name you want to know is ambiguous.
+Retrieves pokemons specified by a part of its names. This is useful when the pokemon’s name which you want to know is ambiguous.
 
 ```bash
 $ pokedex --fuzzy=fla
@@ -132,7 +132,7 @@ Pokedex::Filter.new.fuzzy('fla', lang: 'english').take
 ### Type
 Retrieves pokemons categorized as specific types.
 
-This below is an example for taking pokemons categorized as a **Water** type.
+This below is an example for taking pokemons categorized as a Water type.
 ```bash
 $ pokedex --type=water
 ```
@@ -142,7 +142,7 @@ Pokedex::Filter.new.type('water').take
 ```
 
 #### and
-This example gets pokemons categorized as **Grass and Poison** types.
+This example gets pokemons categorized as **Grass and Poison types**.
 
 ```bash
 $ pokedex --type={grass,poison}
@@ -152,10 +152,18 @@ $ pokedex --type={grass,poison}
 Pokedex::Filter.new.type(['grass', 'poison']).take
 ```
 
-Please note that this doesn’t contain the pokemons categorized as **Grass and other type except for Poison** and **only Grass** type etc.
+Please note that this **doesn’t contain** the pokemons categorized as **Grass and other type except for Poison type**, **only Grass type**, **Poison and other type except for Grass type**, and **only Poison type**.
+
+| Type 1 | Type 2 | Include? |
+|--------|--------|----------|
+| Grass  |        | false    |
+| Poison |        | false    |
+| Grass  | Poison | **true** |
+| Bug    | Grass  | false    |
+| Bug    | Poison | false    |
 
 #### or
-This example gets pokemons categorized as **Grass or Poison** types.
+This example gets pokemons categorized as **Grass or Poison types**.
 
 ```bash
 $ pokedex --type=grass,poison
@@ -165,31 +173,60 @@ $ pokedex --type=grass,poison
 Pokedex::Filter.new.type('grass', 'poison').take
 ```
 
-Please note that this also contains the pokemons categorized as **Grass and other type** and **Poison and other type**.
+Please note that this **also contains** the pokemons categorized as **Grass and other type** and **Poison and other type** (of course **Grass and Poison types**).
+
+| Type 1 | Type 2 | Include? |
+|--------|--------|----------|
+| Grass  |        | **true** |
+| Poison |        | **true** |
+| Grass  | Poison | **true** |
+| Bug    | Grass  | **true** |
+| Bug    | Poison | **true** |
 
 #### single
-This example gets pokemons categorized as **only Grass** type and **only Poison** type.
+This example gets pokemons categorized as **only Grass type** and **only Poison type**.
 
 ```bash
 $ pokedex --type={grass},{poison}
 ```
 
 ```ruby
-Pokedex::Fileter.new.type(['grass'], ['poison']).take
+Pokedex::Filter.new.type(['grass'], ['poison']).take
 ```
 
-Please note that this doesn’t contain the pokemons categorized as **Grass and other type** and **Poison and other type**.
+Please note that this **doesn’t contain** the pokemons categorized as **Grass and other type** and **Poison and other type**.
+
+| Type 1 | Type 2 | Include? |
+|--------|--------|----------|
+| Grass  |        | **true** |
+| Poison |        | **true** |
+| Grass  | Poison | false    |
+| Bug    | Grass  | false    |
+| Bug    | Poison | false    |
 
 #### and/or
-This example gets pokemons categorized as **Grass and Poison** types or **Fire and Flying** types.
+This example gets pokemons categorized as **Grass and Poison types** or **Fire and Flying types**.
 
 ```bash
 $ pokedex --type={grass,poison},{fire,flying}
 ```
 
 ```ruby
-Pokedex::Fileter.new.type(['grass', 'poison'], ['fire', 'flying']).take
+Pokedex::Filter.new.type(['grass', 'poison'], ['fire', 'flying']).take
 ```
+
+| Type 1 | Type 2 | Include? |
+|--------|--------|----------|
+| Grass  |        | false    |
+| Poison |        | false    |
+| Grass  | Poison | **true** |
+| Bug    | Grass  | false    |
+| Bug    | Poison | false    |
+| Fire   |        | false    |
+| Flying |        | false    |
+| Fire   | Flying | **true** |
+| Bug    | Fire   | false    |
+| Bug    | Flying | false    |
 
 ### Region
 Retrieves pokemons living in specific regions.
