@@ -6,20 +6,24 @@ Search pokemons you want to know by CLI and Ruby interface.
 :warning: **This project is WIP!** Stay tuned!
 
 ## Installation
-Add this line to your application's Gemfile:
+:warning: **The gem name is pokemon, not pokedex**. Please be careful.
+
+Add this line to your application’s Gemfile.
 
 ```ruby
-gem 'pokedex'
+gem 'pokemon'
 ```
 
-And then execute:
+And then execute this.
+
 ```bash
 $ bundle install
 ```
 
-Or install it yourself as:
+Or install it yourself.
+
 ```bash
-$ gem install pokedex
+$ gem install pokemon
 ```
 
 ## Usage
