@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ['noraworld']
   spec.email   = ['mail@noraworld.com']
 
-  spec.summary               = 'Search pokemons you want to know by a CLI and a Ruby interface'
-  spec.description           = 'Search pokemons you want to know by a CLI and a Ruby interface'
+  spec.summary               = 'Search pokemons you want to know by a CLI or a Ruby interface'
+  spec.description           = 'Search pokemons you want to know by a CLI or a Ruby interface'
   spec.homepage              = 'https://github.com/noraworld/pokedex'
   spec.license               = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.7.1')

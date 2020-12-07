@@ -1,5 +1,5 @@
 # Pokedex
-Search pokemons you want to know by CLI and Ruby interface.
+Search pokemons you want to know by a CLI or a Ruby interface.
 
 :warning: This project is forked from [fanzeyi/pokemon.json](https://github.com/fanzeyi/pokemon.json), but independent.
 
@@ -27,7 +27,7 @@ $ gem install pokemon
 ```
 
 ## Usage
-Pokedex supports both CLI and Ruby interface. You can choose whichever you want.
+Pokedex supports both a CLI and a Ruby interface. You can choose whichever you want.
 
 In Ruby, you should add this line.
 
