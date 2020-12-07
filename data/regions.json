@@ -62,7 +62,29 @@
     },
     "range": {
       "from": 650,
-      "to": 719
+      "to": 721
+    }
+  },
+  {
+    "id": 7,
+    "name": {
+      "english": "Alola",
+      "japanese": "アローラ"
+    },
+    "range": {
+      "from": 722,
+      "to": 807
+    }
+  },
+  {
+    "id": 8,
+    "name": {
+      "english": "LetsGo",
+      "japanese": "ピカブイ"
+    },
+    "range": {
+      "from": 808,
+      "to": 809
     }
   }
 ]
